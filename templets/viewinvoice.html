@@ -1,0 +1,32 @@
+{% block content %}
+
+<table class="table table-bordered border-primary" id="invoicerow">
+    <thead>
+        <tr>
+            <th scope="col"> SR.no.</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Invoice Date</th>
+            <th scope="col">Invoice Number</th>
+            <th scope="col">state</th>
+            <th scope="col">Delete Data</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in invoice1 %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{i.username}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.invoice_date}}</td>
+            <td>{{i.invoice_number}}</td>
+            <td>{{i.state}}</td>
+            <td><a class="btn btn-danger" href="{% url 'deleteinvoice' i.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+
+{% endblock %}

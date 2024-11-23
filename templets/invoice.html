@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<h1></h1>
+
+<form  action="{% url 'invoice' %}" class="invoice" method="POST">
+    {% csrf_token %}
+    <label for="userInput">Enter your name:</label>
+    <input type="text" id="username" name="username" placeholder="Type something...">
+
+
+    <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email">
+    </div>
+    <div class="col-md-6">
+        <label for="inputdate" class="form-label">invoice_date</label>
+        <input type="date" class="form-control" id="invoice_date" name="invoice_date">
+    </div>
+    <div class="col-md-6">
+        <label for="inputnumber" class="form-label">invoice_number</label>
+        <input type="number" class="form-control" id="invoice_number" name="invoice_number">
+    </div>
+    <div class="col-md-4">
+        <label for="inputState" class="form-label">State</label>
+        <inputb type="text" id="state" class="form-select" name="state">
+    </div>
+    <div class="col-12">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+                Check me out
+            </label>
+        </div>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+</form>
+</body>
+
+</html>
+{% endblock %}
